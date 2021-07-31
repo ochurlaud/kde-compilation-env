@@ -1,0 +1,25 @@
+# Adjust all these settings at will
+
+global
+
+  branch-group kf5-qt5
+
+  qtdir ~/Projets/kde/inst/qt5
+  source-dir ~/Projets/kde/src
+  build-dir ~/Projets/kde/build
+  kdedir ~/Projets/kde/inst
+
+  git-repository-base kde-projects kde:
+
+  num-cores 4
+
+  num-cores-low-mem 2
+  # If you want to use ninja instead of make (it's faster!), uncomment the next line
+  #custom-build-command ninja
+
+  make-options -j ${num-cores}
+
+end global
+
+include src/extragear/utils/kdesrc-build/kf5-qt5-build-include
+
